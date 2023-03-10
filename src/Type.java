@@ -1,14 +1,13 @@
 import java.util.Arrays;
 
 public enum Type {
-    WORK("работа"),
-    PERSONAL("личное");
-    public final String valueOf;
+    WORK("0"),
+    PERSONAL("1");
+    public final String values;
 
-    Type(String valueOf) {
-        this.valueOf = valueOf;
+    Type(String values) {
+        this.values = values;
 
     }
-
 
 }
