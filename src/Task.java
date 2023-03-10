@@ -12,7 +12,7 @@ public abstract class Task {
     private static int idGenerator = 1;
     private Type type;
 
-    public Task(String title, String description, LocalDateTime dateTime, int id, Type type) throws RuntimeException {
+    public Task(String title, String description, LocalDateTime dateTime, Type type) throws RuntimeException {
         this.title = ValidateUtils.checkString(title);
         this.description = ValidateUtils.checkString(description);
         this.dateTime = dateTime;
@@ -56,13 +56,11 @@ public abstract class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", dateTime=" + dateTime +
-                ", archived=" + archived +
-                ", id=" + id +
-                ", type=" + type +
-                '}';
+        return ": " + title + '\'' +
+                ", описание задачи:" + description + '\'' +
+                ", дата события:" + dateTime +
+                (archived ? " в архиве": " не в архиве") +
+                 ", id:" + id +
+                ", тип задачи :" + type;
     }
 }
